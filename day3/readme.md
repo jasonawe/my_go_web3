@@ -49,10 +49,22 @@ web3_wallet_tracker/
 
 ### 2️⃣ 配置 `.env` 文件
 ```env
-ETH_RPC_URL=https://mainnet.infura.io/v3/your_api_key
-REDIS_ADDR=127.0.0.1:6379
+# Ethereum RPC 连接 (WebSocket 推荐)
+RPC_URL=wss://sepolia.infura.io/ws/v3/779e8a98dfb1417a9ad6002e4d1faa91
+WS_URL=wss://sepolia.infura.io/ws/v3/779e8a98dfb1417a9ad6002e4d1faa91
+
+# 监听的 ERC20 合约地址，可逗号分隔多个
+ERC20_CONTRACTS=0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238,0x6B4F879c672aE86546dA2e9Bb79f10d6404E4fE2
+
+# Redis 地址
+REDIS_ADDR=localhost:6379
+
+# 可选: Redis 密码
 REDIS_PASSWORD=
-WS_PORT=8080
+
+# 可选: Web 服务端口（默认8080）
+SERVER_PORT=8080
+SERVER_IP=127.0.0.1
 ```
 
 ### 3️⃣ 启动服务
