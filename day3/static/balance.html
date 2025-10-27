@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>钱包余额查询</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <h2 class="mb-4">钱包资产聚合器</h2>
+
+    <div class="mb-3">
+        <label for="walletAddress" class="form-label">钱包地址</label>
+        <input type="text" class="form-control" id="walletAddress" placeholder="输入钱包地址">
+    </div>
+
+    <button class="btn btn-primary mb-3" id="checkBalance">查询余额</button>
+
+    <div id="result" class="mt-4"></div>
+</div>
+
+<script>
+document.getElementById("checkBalance").addEventListener("click", async () => {
+    const addr = document.getElementById("walletAddress").value.trim();
+    const resultDiv = document.getElementById("result");
+    resultDiv.innerHTML = "";
+
+    if (!addr) {
+        resultDiv.innerHTML = '<div class="alert alert-warning">请输入钱包地址</div>';
+        return;
+    }
+
+    try {
+        const res = await axios.get(`/api/balance/wallet/${addr}`,{ timeout: 15000 });
+        const data = res.data;
+
+        let html = `<h5>ETH 余额: ${data.wallet_balance.eth_balance ?? 0} ETH</h5>`;
+        html += `<h5>代币余额:</h5><ul>`;
+
+        const tokens = data.wallet_balance.tokens || [];
+        if (tokens.length === 0) {
+            html += `<li>无代币余额</li>`;
+        } else {
+            for (const token of tokens) {
+                html += `<li>${token.symbol}: ${token.balance}</li>`;
+            }
+        }
+
+        html += `</ul>`;
+
+        resultDiv.innerHTML = html;
+    } catch (err) {
+        console.error(err);
+        resultDiv.innerHTML = '<div class="alert alert-danger">获取余额失败，请检查钱包地址或网络</div>';
+    }
+});
+</script>
+
+</body>
+</html>
