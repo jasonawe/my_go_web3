@@ -91,7 +91,7 @@ http://localhost:8080/static/balance.html    # 查询钱包余额页面
 
 ## 🧑‍💻 Author | 作者
 - **Jason**
-- Backend Engineer @ Gate.io
+- Backend Engineer
 - 技术栈：Go / PHP / Redis / TiDB / EKS / Hyperf
 
 ---
