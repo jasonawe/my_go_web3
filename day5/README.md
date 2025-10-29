@@ -36,7 +36,7 @@ npm install dotenv
 
 ### 3. 配置.env / Config .env
 ```
-SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/779e8a98dfb1417a9ad6002e4d1faa90
+SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/{your_node_key}
 SEPOLIA_PRIVATE_KEY={your_eth_wallet_private_key}
 ```
 
