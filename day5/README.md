@@ -91,6 +91,7 @@ Current winner: Bob
 
 
 ## 项目结构 / Project Structure
+```
 ├── contracts/             # Solidity 智能合约 / Solidity smart contracts
 │   └── MinVoting.sol      # 投票合约 / Voting contract
 ├── scripts/               # 合约部署与交互脚本 / Deployment & interaction scripts
@@ -101,4 +102,4 @@ Current winner: Bob
 ├── package.json           # Node.js 项目配置 / Node.js project config
 ├── tsconfig.json          # TypeScript 配置 / TypeScript config
 └── hardhat.config.ts      # Hardhat 配置 / Hardhat config
-
+```
