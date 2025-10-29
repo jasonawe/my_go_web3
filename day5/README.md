@@ -22,7 +22,7 @@ This is a small voting DApp project based on Ethereum, implemented with Hardhat 
 
 ### 1. 克隆项目 / Clone the repository
 ```bash
-git clone [<my_go_web3l>](https://github.com/jasonawe/my_go_web3.git)
+git clone https://github.com/jasonawe/my_go_web3.git
 cd day5
 ```
 
