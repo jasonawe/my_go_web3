@@ -28,7 +28,7 @@ SEPOLIA_RPC_URL=https://sepolia.infura.io/v3/YOUR_PROJECT_ID
 SEPOLIA_PRIVATE_KEY=0x你的钱包私钥
 ```
 ----
-## 4️⃣ NFT合约编写&编译 / NFT Contract Code and Compile
+## 4️⃣ Settle合约编写&编译 / Settle Contract Code and Compile
 合约 OnchainSettle.sol 使用ERC210.IERC20 和 Ownable：
 ```js
 // SPDX-License-Identifier: MIT
@@ -130,7 +130,7 @@ Nothing to compile
 
 ```
 ----
-5️⃣ NFT合约部署编写&部署 / Deploy NFT Contract Code And Deploy
+5️⃣ Settle合约部署编写&部署 / Deploy Settle Contract Code And Deploy
 
 scripts下编写delpoy.ts
 
